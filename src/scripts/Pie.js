@@ -6,5 +6,9 @@ import { dataPie } from "../data/Data"
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export function PieC() {
-  return <Pie data={dataPie} />;
+  return (
+    <div>
+        <Pie data={dataPie} />
+    </div>
+  );
 }

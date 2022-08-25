@@ -10,7 +10,7 @@ import {
   Legend
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import { options, dataLine } from "../data/Data";
+import { lineOptions, dataLine } from "../data/Data";
 
 ChartJS.register(
   CategoryScale,
@@ -23,5 +23,5 @@ ChartJS.register(
 );
 
 export function LineC() {
-    return <Line options={options} data={dataLine} />;
+    return <Line options={lineOptions} data={dataLine} />;
 }
