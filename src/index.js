@@ -1,8 +1,8 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 
-import { LineC } from "./chartScripts/Line";
-import { PieC } from "./chartScripts/Pie";
+import { LineC } from "./scripts/Line";
+import { PieC } from "./scripts/Pie";
 
 const pieElement = document.getElementById("Pie");
 const lineElement = document.getElementById("Line");
