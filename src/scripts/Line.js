@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -9,7 +10,7 @@ import {
   Tooltip,
   Legend
 } from "chart.js";
-import { Line, getDatasetAtEvent } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import faker from "faker"; //Used for data
 //import {dataLine} from "../data/Data";
 
@@ -73,12 +74,6 @@ export const data = {
       yAxisID: "y1"
     }
   ],
-};
-
-const chartRef = useRef();
-
-export const onClick = (event) => {
-    console.log(getDatasetAtEvent(chartRef.current, event))
 };
 
 
