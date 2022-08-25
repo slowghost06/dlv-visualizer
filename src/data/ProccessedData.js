@@ -1,6 +1,6 @@
 let ProcessedData = class{
-    constructor(){
-        const thirteenColors = ["rgba(255, 99, 132, 1)",
+    constructor(months, month, fetchedData){
+        this.thirteenColors = ["rgba(255, 99, 132, 1)",
                                 "rgba(54, 162, 235, 1)",
                                 "rgba(255, 206, 86, 1)",
                                 "",
@@ -15,13 +15,22 @@ let ProcessedData = class{
                                 "",
                                 ];
                                 
-        const months = ["Dec-20","Jan-21","Feb-21","Mar-21","Apr-21","May-21","June-21","July-21","Aug-21","Sept-21","Oct-21","Nov-21","Dec-21"];
-
         //Input configured
         //var country
-        var month = 5
+        //this.month = 5;
+        this.month = month;
+        //this.months = ["Dec-20","Jan-21","Feb-21","Mar-21","Apr-21","May-21","June-21","July-21","Aug-21","Sept-21","Oct-21","Nov-21","Dec-21"];
+        this.months = months;
+        /*
+        const fetchedData = {
+            "Gender 1":[0,0,0,0,0,47.29,0,47.02,0,0,0,0,0],
+            "Gender 2":[0,0,0,0,0,44.169,0,44.43,0,0,0,0,0],
+            "Gender 3":[0,0,0,0,0,8.541,0,8.55,0,0,0,0,0]  
+        };*/
+        this.fetchedData = fetchedData;
+        this.dataMetrics = Object.keys(fetchedData);
         
-        export const lineOptions = {
+        this.lineOptions = {
             responsive: true,
             interaction: {
                 mode: "index",
@@ -45,22 +54,14 @@ let ProcessedData = class{
                 }
             }
         };
-
-        const fetchedData = {
-            "Gender 1":[0,0,0,0,0,47.29,0,47.02,0,0,0,0,0],
-            "Gender 2":[0,0,0,0,0,44.169,0,44.43,0,0,0,0,0],
-            "Gender 3":[0,0,0,0,0,8.541,0,8.55,0,0,0,0,0]  
-        };
-
-        const dataMetrics = Object.keys(fetchedData);
-
-        const dummyDataPie = {
+        
+        this.dummyDataPie = {
             labels: dataMetrics,
             datasets: []
         };
-        let dtPie = [];
+        this.dtPie = [];
 
-        const dataLine = {
+        this.dataLine = {
             labels: months,
             datasets: []
         }
@@ -68,31 +69,32 @@ let ProcessedData = class{
     
     /*
     function generateData(item, index){
-        let dtLine = fetchedData[item];
-        let clr = thirteenColors;
+        let dtLine = this.fetchedData[item];
+        let clr = this.thirteenColors;
         let yA = 'y';
         
-        dtPie.push(fetchedData[item][month])
+        dtPie.push(this.fetchedData[item][month])
         
         let dpLine = {
             label: item,
             data: dtLine,
             backgroundColor: "#fff",
-            borderColor: clr[index],
+            borderColor: this.clr[index],
             yAxisID: yA
         }
         
-        dataLine['datasets'].push(dpLine);
+        this.dataLine['datasets'].push(dpLine);
     };*/
     
-    dataPie['datasets'].push({
+    
+    //Need to execute this in constructor
+    this.dataPie['datasets'].push({
         label: '',
-        data :dtPie,
-        backgroundColor: thirteenColors,
-        borderColor: thirteenColors,
+        data : this.dtPie,
+        backgroundColor: this.thirteenColors,
+        borderColor: this.thirteenColors,
         borderWidth: 1
     });
 
-    dataMetrics.forEach(generateData);
-    
+    this.dataMetrics.forEach(generateData);
 };
