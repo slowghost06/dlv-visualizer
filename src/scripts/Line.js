@@ -9,8 +9,9 @@ import {
   Tooltip,
   Legend
 } from "chart.js";
-import { Line } from "react-chartjs-2";
+import { Line, getDatasetAtEvent } from "react-chartjs-2";
 import faker from "faker"; //Used for data
+//import {dataLine} from "../data/Data";
 
 ChartJS.register(
   CategoryScale,
@@ -71,8 +72,15 @@ export const data = {
       backgroundColor: "rgba(53, 162, 235, 0.5)",
       yAxisID: "y1"
     }
-  ]
+  ],
 };
+
+const chartRef = useRef();
+
+export const onClick = (event) => {
+    console.log(getDatasetAtEvent(chartRef.current, event))
+};
+
 
 export function LineC() {
   return <Line options={options} data={data} />;
