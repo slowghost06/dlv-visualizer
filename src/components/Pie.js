@@ -12,7 +12,7 @@ export default class PieC extends React.Component {
     
     render() {
       return (
-                <div>
+                <div className="pie">
                   <Pie data={this.state.dataPie} />
                 </div>
               );

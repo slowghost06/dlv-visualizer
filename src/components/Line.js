@@ -21,7 +21,7 @@ ChartJS.register(
   Legend
 );
 
-export default class LineC extends React.Component {
+export default class LinC extends React.Component {
     constructor(props) {
       super(props);
       this.state = {lineOptions: this.props.lineOptions, dataLine: this.props.dataLine};
@@ -29,7 +29,7 @@ export default class LineC extends React.Component {
     
     render() {
       return (
-                <div>
+                <div className="line">
                   <Line options={this.state.lineOptions} data={this.state.dataLine} />;
                 </div>
               );
