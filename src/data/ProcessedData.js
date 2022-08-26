@@ -1,5 +1,5 @@
 export var ProcessedData = class{
-    constructor(months, month, fetchedData, country, metric){
+    constructor(months, month, selectedData, country, metric){
         this.thirteenColors = ["rgba(255, 99, 132, 1)",
                                 "rgba(54, 162, 235, 1)",
                                 "rgba(255, 206, 86, 1)",
@@ -19,8 +19,8 @@ export var ProcessedData = class{
         this.country = country;
         this.month = month;
         this.months = months;
-        this.fetchedData = fetchedData;
-        this.dataMetrics = Object.keys(this.fetchedData);
+        this.selectedData = selectedData;
+        this.dataMetrics = Object.keys(this.selectedData);
         
         this.lineOptions = {
             responsive: true,
@@ -59,11 +59,11 @@ export var ProcessedData = class{
         }
         
         this.generateData = (item, index)=>{
-            let dtLine = this.fetchedData[item];
+            let dtLine = this.selectedData[item];
             let clr = this.thirteenColors;
             let yA = 'y';
             
-            this.dtPie.push(this.fetchedData[item][month])
+            this.dtPie.push(this.selectedData[item][month])
             
             let dpLine = {
                 label: item,
