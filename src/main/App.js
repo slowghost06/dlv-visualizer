@@ -25,12 +25,24 @@ export default class AppC extends React.Component {
     }
     
     render() {
-      return (
+        if (Object.keys(this.state.dataPie).length===0){
+            pie = <div></div>;
+        }else{
+            pie = <PieC dataPie={this.state.dataPie} />;
+        }
+        
+        if (Object.keys(this.state.lineOptions).length===0 || Object.keys(this.state.dataLine).length===0){
+            line = <div></div>;
+        }else{
+            line = <LinC lineOptions={this.state.lineOptions} dataLine={this.state.dataLine} />;
+        }
+        
+        return (
                 <div className="App">
                     <NavC />
                     <InpC months={this.state.months} countries={this.state.countries} metrics={this.state.metrics}/>
-                    <PieC dataPie={this.state.dataPie} />;
-                    <LinC lineOptions={this.state.lineOptions} dataLine={this.state.dataLine} />
+                    {pie}
+                    {line}
                 </div>
               );
     }
