@@ -22,6 +22,8 @@ ChartJS.register(
   Legend
 );
 
+console.log(dataLine);
+
 export function LineC() {
     return <Line options={lineOptions} data={dataLine} />;
 }
