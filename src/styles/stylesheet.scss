@@ -1,17 +1,75 @@
-.root{
-    
+//variables
+$font-family : Montserrat;
+$tb-color : #424242;
+$primary-color : #89CFF0;
+$primary-color-two : #6495ED;
+
+$light : 300;
+$regular : 400;
+$bold : 600;
+$xbold : 800;
+
+ 
+body{
+    font-family: Montserrat;
+    margin: 0;
 }
 
-#App{
+#root{
     
 }
 
 .App{
-    
-}
-
-.navbar{
-    
+    .navbar{
+        height: fit-content;
+        width: 100vw;
+        background-color: #000;
+        color: #fff;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        margin: 0;
+    }
+    .content{
+        position: relative;
+        top: 120px;
+        .configForm{
+            .form{
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                gap: 10px;
+                align-items: center;
+                .options{
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    justify-content: space-between;
+                    .option{
+                        display: flex;
+                        flex-direction: column;
+                        .label{
+                            font-weight: 600;
+                        }
+                        .dropdown{
+                            font-family: $font-family;
+                        }
+                    }
+                }
+                #submitButton{
+                    width: 20vw;
+                }
+            }
+        }
+        .chartBox{
+            //display: flex;
+            justify-content: space-between;
+            width: 100vw;
+        }
+    }
+    h1{
+        margin-left: 2vw;
+    }
 }
 
 .line{
@@ -22,18 +80,20 @@
     
 }
 
-.configForm{
-    
-}
-
 .primaryButton{
     display: flex;
+    font-family: $font-family;
+    font-weight: $regular;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 20px;
     gap: 20px;
-    background: #89CFF0;
-    border: 2px solid #424242;
+    background: $primary-color;
+    border: 2px solid $tb-color;
     border-radius: 10px;
+    &:hover{
+        background: $primary-color-two;
+        font-weight: $bold;
+    }
 }
