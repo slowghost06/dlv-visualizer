@@ -76,27 +76,3 @@ export default class AppC extends React.Component {
               );
     }
 }
-/*
-export default function App(){
-    const [ metrics, countries, months ] = useState(false);
-    
-    const handleClick = (e) => {
-        console.log("handleClick");
-        e.preventDefault();
-        //Input options
-        let metric = document.getElementById("metric").value; 
-        let month = document.getElementById("month").value;
-        let country = document.getElementById("country").value;
-        
-        
-        console.log(metric,month,country);
-    };
-    
-    return  (
-                <div className="App">
-                    <NavC />
-                    <InpC handleClick={handleClick} months={months} countries={countries} metrics={metrics} />
-                    <div id="chartBox"></div>
-                </div>
-            );
-}*/
