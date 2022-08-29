@@ -26,8 +26,6 @@ export default class AppC extends React.Component {
         // To prevent default reload function
         e.preventDefault();
         
-        console.log("handleClick");
-        
         //Input options
         let metric = document.getElementById("metric").value; 
         let month = document.getElementById("month").value;
@@ -67,9 +65,16 @@ export default class AppC extends React.Component {
                 <div className="App">
                     <NavC />
                     <div className="content">
+                        <h1>Configuration.</h1>
                         <InpC handleClick={this.handleClick} months={this.state.months} countries={this.state.countries} metrics={this.state.metrics} />
+                        <h1>Charts.</h1>
                         {
-                            this.state.showChart && (<ChaC key={this.state.dataPie} dataLine={this.state.dataLine} dataPie={this.state.dataPie} lineOptions={this.state.lineOptions}/>)
+                            (this.state.showChart && (<ChaC key={this.state.dataPie} dataLine={this.state.dataLine} dataPie={this.state.dataPie} lineOptions={this.state.lineOptions}/>))
+                            ||(!this.state.showChart && (   
+                                                            <div>
+                                                                <h2>No charts to show.</h2>
+                                                            </div>)
+                                                        )
                         }
                     </div>
                 </div>

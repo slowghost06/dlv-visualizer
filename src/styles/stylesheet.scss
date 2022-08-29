@@ -11,64 +11,71 @@ $xbold : 800;
 
  
 body{
-    font-family: Montserrat;
+    font-family: $font-family;
     margin: 0;
 }
 
 #root{
-    
-}
-
-.App{
-    .navbar{
-        height: fit-content;
-        width: 100vw;
-        background-color: #000;
-        color: #fff;
-        padding: 0;
-        position: absolute;
-        top: 0;
-        margin: 0;
-    }
-    .content{
-        position: relative;
-        top: 120px;
-        .configForm{
-            .form{
-                display: flex;
-                flex-direction: column;
-                padding: 20px;
-                gap: 10px;
-                align-items: center;
-                .options{
+    .App{
+        .navbar{
+            height: fit-content;
+            width: 100vw;
+            background-color: #000;
+            color: #fff;
+            padding: 0;
+            position: absolute;
+            top: 0;
+            margin: 0;
+        }
+        .content{
+            position: relative;
+            top: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .configForm{
+                width: 100%;
+                .form{
                     display: flex;
-                    flex-direction: row;
-                    width: 100%;
-                    justify-content: space-between;
-                    .option{
+                    flex-direction: column;
+                    padding: 20px;
+                    gap: 10px;
+                    align-items: center;
+                    .options{
                         display: flex;
-                        flex-direction: column;
-                        .label{
-                            font-weight: 600;
-                        }
-                        .dropdown{
-                            font-family: $font-family;
+                        flex-direction: row;
+                        width: 100%;
+                        justify-content: space-between;
+                        .option{
+                            display: flex;
+                            flex-direction: column;
+                            width: 30%;
+                            .label{
+                                font-weight: 600;
+                            }
+                            .dropdown{
+                                font-family: $font-family;
+                            }
                         }
                     }
-                }
-                #submitButton{
-                    width: 20vw;
+                    #submitButton{
+                        width: 20vw;
+                    }
                 }
             }
+            .chartBox{
+                /*
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                height: 100vh;
+                */
+                width: 90vw;
+            }
         }
-        .chartBox{
-            //display: flex;
-            justify-content: space-between;
-            width: 100vw;
+        h1{
+            margin-left: 2vw;
         }
-    }
-    h1{
-        margin-left: 2vw;
     }
 }
 
